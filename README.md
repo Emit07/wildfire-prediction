@@ -12,7 +12,10 @@ Using machine learning to predict wildfire risk and how climate change affects r
 
 ## Data sources
 
-## Pipeline
+* Historical Fire Data: https://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/fire-perimeters
+* NDVI: Modis + Google Earth Engine
+* Weather: Copernicus ERA5
+* Topography: scraped 30m dem (3dep)
 
 ## Models
 
