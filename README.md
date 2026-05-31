@@ -19,6 +19,6 @@ Using machine learning to predict wildfire risk and how climate change affects r
 
 ## Models
 
-* XGBoost
-* LightGBM
-* RandomForest
+* XGBoost: Model we ended up using
+* LightGBM: would only classify 0
+* RandomForest: Took to long to train
