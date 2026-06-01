@@ -109,30 +109,27 @@ PR-AUC  : 0.0038
 
 The high ROC-AUC reflects that fires almost always occur in cells the model already ranks as high-risk. The low PR-AUC is expected: wildfire is an extremely rare event (~0.02% of all cell-months), and because the model flags large contiguous risk zones, many high-risk cells will never ignite in any given year — they are not wrong predictions, just unfired fuel. The capture rate table is a more actionable metric:
 
-| Top Risk Percentile | Fires Captured |
-|---|---|
-| 1% | 30.2% |
-| 5% | 73.4% |
-| 10% | 88.1% |
-| 20% | 96.4% |
-| 30% | 99.6% |
-| 50% | 99.6% |
+![Model Capture Rates](media/modelcapture.png)
 
 By monitoring only the **top 10% of highest-risk cells**, resource managers can expect to have pre-identified the location of **88% of all fires** before they occur.
 
 ### Prediction Maps
 
+![Fire Season 2024](media/fireseason2024.png)
+
 Monthly risk maps (May–October) show strong seasonal dynamics: foothills and lower-elevation mountains carry the highest risk early in the season when higher elevations are still too cold to burn. By mid-summer, risk concentrates in the Sierra Nevada and Coast Ranges. The Central Valley and desert regions show near-zero risk year-round.
 
 ### Feature Importance
 
-Top features (in order): `soil_moisture`, `fire_season`, `temp_c_lag1`, `ndvi_lag1`, `month_sin`, `soil_moisture_lag1`, `temp_c`, `year`, `lon`, `slope_deg`, `elevation_m`
+![XGBoost feature importance](media/xgboost_feature_importance.png)
 
 Soil moisture and its lag dominate — dry antecedent conditions are the single strongest predictor of ignition risk. Temperature (especially lagged) and NDVI capture the heat/vegetation-stress interaction. The `fire_season` binary and `month_sin` encode seasonality. Topographic features (slope, elevation) shape the spatial envelope of risk but are outranked by weather, confirming the model learned meaningful fire dynamics rather than a simple elevation mask.
 
 ---
 
 ## Climate Change Projections (2035 / 2050 / 2075)
+
+![Future risk change projections](media/futureprojections.png)
 
 Using IPCC AR6 trends for California, we perturbed the 2024 baseline inputs and re-ran the trained model at three future horizons — **without retraining**. The change in predicted fire probability (future − present) is mapped per grid cell.
 
@@ -149,11 +146,11 @@ These projections can directly inform long-term land management, prescribed burn
 
 ---
 
-## Repository Structure
-├── data_exploration.ipynb          # EDA, data distributions, fire seasonality
-├── wildfire_risk_xgboost.ipynb     # Model training, tuning, evaluation
-├── wildfire_risk_future_change.ipynb  # Climate change projection maps
-├── media/                          # Output figures and maps
+## Repository Structure 
+├── data_exploration.ipynb          # EDA, data distributions, fire seasonality \
+├── wildfire_risk_xgboost.ipynb     # Model training, tuning, evaluation \
+├── wildfire_risk_future_change.ipynb  # Climate change projection maps \
+├── media/                          # Output figures and maps \
 └── README.md
 
 ---
