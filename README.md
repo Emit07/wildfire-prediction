@@ -201,6 +201,30 @@ These projections can directly inform long term land management, prescribed burn
 ├── media/                          # Output figures and maps \
 └── README.md
 
+```text
+wildfire-prediction/
+├── data/
+│   ├── ca_fire_monthly_2012_2025.csv
+│   ├── california_monthly_weather.csv
+│   ├── ndvi.csv
+│   └── elevation_grid.csv
+├── media/
+│   └── ...
+├── model/
+│   ├── wildfire_xgb.joblib
+│   └── feature_list.json
+├── data_processing/
+│   ├── convert_elevation.py
+│   ├── convert_era5.py
+│   ├── convert_frap.py
+│   └── convert_ndvi.py
+├── README.md
+├── data_exploration.ipynb
+├── wildfire_risk_model.ipynb
+└── wildfire_risk_projections.ipynb
+```
+
+
 ---
 
 ## Roadmap
