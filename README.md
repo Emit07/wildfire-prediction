@@ -70,10 +70,10 @@ The notebooks in this repository expect the data to be located at:
 ```text
 wildfire_project/
 ├── data/
-│   ├── wildfire.csv
-│   ├── weather.csv
+│   ├── ca_fire_monthly_2012_2025.csv
+│   ├── california_monthly_weather.csv
 │   ├── ndvi.csv
-│   └── topography.csv
+│   └── elevation_grid.csv
 ```
 
 If you are using Google Colab, upload the dataset repository to your Google Drive. The default notebook path assumes:
@@ -90,10 +90,10 @@ The dataset contains approximately 13 years of monthly wildfire, weather, vegeta
 
 | File | Description |
 |--------|------------|
-| `wildfire.csv` | Historical fire occurrence labels and burned area information |
-| `weather.csv` | ERA5-derived temperature, precipitation, wind speed, soil moisture, and solar radiation |
+| `ca_fire_monthly_2012_2025.csv` | Historical fire occurrence labels and burned area information |
+| `california_monthly_weather.csv` | ERA5-derived temperature, precipitation, wind speed, soil moisture, and solar radiation |
 | `ndvi.csv` | Monthly vegetation index (NDVI) derived from MODIS |
-| `topography.csv` | Elevation, slope, and aspect derived from USGS 3DEP data |
+| `elevation_grid.csv` | Elevation, slope, and aspect derived from USGS 3DEP data |
 
 See the dataset repository README for additional details on preprocessing, data sources, and attribution.
 
