@@ -195,11 +195,6 @@ These projections can directly inform long term land management, prescribed burn
 ---
 
 ## Repository Structure 
-├── data_exploration.ipynb          # EDA, data distributions, fire seasonality \
-├── wildfire_risk_xgboost.ipynb     # Model training, tuning, evaluation \
-├── wildfire_risk_future_change.ipynb  # Climate change projection maps \
-├── media/                          # Output figures and maps \
-└── README.md
 
 ```text
 wildfire-prediction/
@@ -223,7 +218,6 @@ wildfire-prediction/
 ├── wildfire_risk_model.ipynb
 └── wildfire_risk_projections.ipynb
 ```
-
 
 ---
 
