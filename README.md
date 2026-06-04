@@ -51,6 +51,54 @@ The result is 4 clean CSV files with ~6 million rows (grid_id × year_month), re
 
 ---
 
+## Getting the Data
+
+The compiled dataset used for training and evaluation is available in the companion repository:
+
+**Dataset Repository:** https://github.com/Emit07/wildfire-prediction-data
+
+Clone the dataset repository:
+
+```bash
+git clone https://github.com/Emit07/wildfire-prediction-data
+```
+
+### Directory Structure
+
+The notebooks in this repository expect the data to be located at:
+
+```text
+wildfire_project/
+├── data/
+│   ├── wildfire.csv
+│   ├── weather.csv
+│   ├── ndvi.csv
+│   └── topography.csv
+```
+
+If you are using Google Colab, upload the dataset repository to your Google Drive. The default notebook path assumes:
+
+```text
+/content/drive/MyDrive/wildfire_project/data/
+```
+
+You are welcome to modify the file paths in the notebooks if you prefer a different directory structure or are running locally.
+
+### Dataset Contents
+
+The dataset contains approximately 13 years of monthly wildfire, weather, vegetation, and topographic data aggregated to a 0.05° (~5.6 km) grid across California:
+
+| File | Description |
+|--------|------------|
+| `wildfire.csv` | Historical fire occurrence labels and burned area information |
+| `weather.csv` | ERA5-derived temperature, precipitation, wind speed, soil moisture, and solar radiation |
+| `ndvi.csv` | Monthly vegetation index (NDVI) derived from MODIS |
+| `topography.csv` | Elevation, slope, and aspect derived from USGS 3DEP data |
+
+See the dataset repository README for additional details on preprocessing, data sources, and attribution.
+
+---
+
 ## Model
 
 ### Why XGBoost?
@@ -158,6 +206,7 @@ These projections can directly inform long term land management, prescribed burn
 ## Roadmap
 
 - [ ] Add download link for compiled CSV datasets
+- [ ] Add automated data download and validation scripts
 - [ ] Package notebooks into a reproducible pipeline for local execution
 
 ---
